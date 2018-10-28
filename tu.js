@@ -23,5 +23,9 @@ setInterval(function(){
 
 	var title = "";
 	var link = "";
+	
+	tumblrClient.blogPosts('BLOG_URL', function (err, data) {
+	    
+	});
 
 }, 30000);
