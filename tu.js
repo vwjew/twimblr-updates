@@ -13,3 +13,8 @@ var twitterClient = new Twitter({
   access_token_key: 'ACCESS_TOKEN_KEY',
   access_token_secret: 'ACCESS_TOKEN_SECRET'
 });
+
+var Masto = require('mastodon');
+var mastoClient = new Masto({
+	access_token: 'ACCESS_TOKEN'
+});
