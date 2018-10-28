@@ -18,3 +18,10 @@ var Masto = require('mastodon');
 var mastoClient = new Masto({
 	access_token: 'ACCESS_TOKEN'
 });
+
+setInterval(function(){
+
+	var title = "";
+	var link = "";
+
+}, 30000);
