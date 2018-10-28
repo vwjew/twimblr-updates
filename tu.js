@@ -25,7 +25,22 @@ setInterval(function(){
 	var link = "";
 	
 	tumblrClient.blogPosts('BLOG_URL', function (err, data) {
-	    
+	    if(data.posts[0].id != latest){
+	    	title = data.posts[0].summary;
+	    	link = data.posts[0].post_url;
+
+	    	if(title.length > 107){
+	    		title = title.substr(0, 107) + "...";
+	    	}
+
+	    	twitterClient.post('statuses/update', {status: title + ' ' + link}, function(error, tweet, response){
+				//console.log("twit");
+			});
+
+		mastoClient.post('statuses', {status: title + ' ' + link});
+	    }
+
+	    latest = data.posts[0].id;
 	});
 
 }, 30000);
